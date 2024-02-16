@@ -16,9 +16,11 @@ let url_users = 'https://jsonplaceholder.typicode.com/users';
 let xhr = new XMLHttpRequest();
 
 // create a callback function to fire when the onreadystatechange happens
-xhr.onreadystatechange = function () {
+xhr.onreadystatechange = function () 
+{
     // check that the state is done
-    if (xhr.readyState === 4) {
+    if (xhr.readyState === 4) 
+    {
         // turn into json
         let responseData = JSON.parse(xhr.responseText);
 
@@ -38,7 +40,10 @@ xhr.onreadystatechange = function () {
         let figcaption2 = document.getElementById('figcaption2');
         figcaption2.textContent = responseData[1].title;
 
+    } else 
+    {
         // send error message
+        console.log('Error: ' + xhr.status);
     }
 };
 // use the .open() method to configure the object
