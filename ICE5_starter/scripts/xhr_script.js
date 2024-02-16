@@ -39,11 +39,13 @@ xhr.onreadystatechange = function () {
         figcaption2.textContent = responseData[1].title;
 
         // send error message
-        // Add your logic to handle errors here if needed
     }
 };
 // use the .open() method to configure the object
+xhr.open('GET', url_photos);
 
 // add datatype to header
+xhr.setRequestHeader('Content-Type', 'application/json');
 
 // use the .send() method to send the request
+xhr.send();
